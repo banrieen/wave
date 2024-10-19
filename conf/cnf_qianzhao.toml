@@ -1,0 +1,58 @@
+# Data source config
+# Env: Python 3.11.4
+
+[LED_CSV_QIANZHAO.info]
+# C:\workspace\ProductManageSpace\
+csv_path = "C:\\workspace\\ProductManageSpace\\00-示例数据\\LED-qiangzhao-csv"
+
+
+[LED_CSV_QIANZHAO.analysis_info]
+Index = "VF"
+Spec = [0,0.3]
+BINCode = "BIN"
+asix = ["PosX","PosY"]
+database = "datasets_led_qianzhao"
+dut_info_table = "datasets_led_qianzhao.dut_info"
+dut_list_table = "datasets_led_qianzhao.dut_list"
+dut_info_row = 11
+dut_list_row = 53
+dut_list_count = ""
+
+[LED_CSV_QIANZHAO.dataset_db]
+host = "192.168.13.55"
+port = "3306"
+user = "root"
+password = "root"
+raise_on_warnings = true
+
+[LED_CSV_QIANZHAO.minIO]
+endpoint = "192.168.13.89:9000"
+access_key = "BEUHvMfx9zXUpnD35wiO1xuyJwPvlULuVqljgIHz"
+account = "admin"
+secret_key = "admin123"
+secure = false
+
+[LED_CSV_QIANZHAO.dut_info]
+FileName = "FileName"
+TestTime = "TestTime"
+TestStartTime = "TestStartTime"
+TestEndTime = "TestEndTime"
+TesterModel = "TesterModel"
+TesterNumber = "TesterNumber"
+Specification = "Specification"
+TotalTested = "TotalTested"                                                                                              
+Operator = "Operator"                                                
+
+[LED_CSV_QIANZHAO.dut_list]
+TEST = "TEST"
+BIN = "BIN" 
+VF1 = "VF1"
+IR = "IR"
+IR1 = "IR1"
+PosX = "PosX"
+PosY = "PosY"
+
+[LED_CSV_QIANZHAO.dut_join]
+FileName = "FileName"   
+Operator = "Operator"   
+TesterModel = "TesterModel"  

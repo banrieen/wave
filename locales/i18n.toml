@@ -1,0 +1,5 @@
+# 多语言菜单配置
+[info]
+app_name = {en = "Yield", cn = "异常暂停"}
+account = {en = "Account", cn = "账号"}
+passwd = {en = "Password", cn = "密码"}

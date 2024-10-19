@@ -1,0 +1,91 @@
+import tomllib
+import time
+import pdb
+from mysqlSync import mysql_sync
+from excelParser import Parser as pe
+
+"""
+将 excel sheet 更新到mysql数据库
+
+"""
+
+def get_conf(conf_file="default.toml", hostname="default"):
+    """
+    1. 读取toml格式配置文件
+    2. 加载项目参数
+    >>> get_conf("default.toml")
+    if "default" in conf.keys():
+        pass
+    """
+    conf = {}
+    with open(conf_file, "rb") as f:
+        conf = tomllib.load(f)
+    conf = conf[hostname]
+    return conf
+
+def insert_paras_table(my_client, dut_info_tablename, dut_info_schema, vals):
+    insert_sql = "INSERT INTO %s (%s) VALUES (%s);" % (dut_info_tablename, dut_info_schema, ', '.join(['%s'] * len(vals)))
+    my_client.execute(insert_sql, tuple(vals))
+    my_client.cnx.commit()
+    print(f"=====>>> Dut info Sql commit ended at {time.strftime('%X')}")
+
+def insert_dict_table(my_client, dut_list_tablename, dut_list_schema,  columns, dut_rows):
+    val_many = dut_rows
+    insert_sql = "INSERT INTO %s (%s) VALUES (%s);" % (dut_list_tablename, dut_list_schema, ', '.join(['%s'] * len(columns)))
+    my_client.execute_many(insert_sql, val_many)
+    my_client.cnx.commit()
+    print(f"=====>>> Dut list Sql commit ended at {time.strftime('%X')}")
+
+
+def sync_to_sql(my_client, file_client, filepath, conf):
+    dut_list_tablename = conf["analysis_info"]["dut_summary_table"]
+    # 获取 data list
+    df = file_client.get_row_list(filepath, conf["analysis_info"]["sheetID"], conf["dut_summary"].keys())
+    # 插入 dut list
+    columns, df_rows = file_client.get_rows(df)
+    df_rows_schema = ', '.join(columns)
+    insert_dict_table(my_client, dut_list_tablename, df_rows_schema, columns, df_rows)
+
+
+def runner(conf_file="", project_name="default"):
+    try:
+        conf = get_conf(conf_file, project_name)
+    except IOError as err:
+        raise FileExistsError(f"{conf_file} is not exist !")
+    
+    excel_client = pe()
+    files = excel_client.get_filelist(conf["info"]["csv_path"])
+    # Init mysql connection
+    my_client = mysql_sync() 
+    my_client.conn(conf["dataset_db"])
+    # Get files
+    for file in files:
+        print(f"=====>>> Executed {file} at {time.strftime('%X')}")
+        sync_to_sql(my_client, excel_client, file, conf) 
+    ## 调用多线程执行
+    ## ====================================================================================
+    ## generated an exception: 'mysql_sync' object is not subscriptable
+    # with concurrent.futures.ThreadPoolExecutor(max_workers=32) as executor:
+    #     print(f"Cached started at {time.strftime('%X')}")
+    #     future_to_insert = {executor.submit(sync_to_sql, csv_file, conf["analysis_info"], my_client): csv_file for csv_file in csv_files} 
+    #     for future in concurrent.futures.as_completed(future_to_insert):
+    #         print(f"Executed {csv_files} at {time.strftime('%X')}")
+    #         rst = future_to_insert[future]
+    #         try:
+    #             data = future.result()
+    #         except Exception as exc:
+    #             print('%r generated an exception: %s' % (rst, exc))
+    #         else:
+    #             pass
+    ## ======================================================================================
+
+    print(f"finished at {time.strftime('%X')}")
+    my_client.cnx.close()
+
+if __name__ == "__main__":
+    conf_file = "conf/cnf_qianzhao_01.toml"
+    project_name = "LED_CSV_QIANZHAO"
+    # 获取信息头
+    # csv = r"C:\workspace\etl_gan\pySpray\test\qianzhao.csv"
+    # csv_info = cp.get_csv_info(csv_file=csv, rows=14)
+    runner(conf_file=conf_file, project_name=project_name)

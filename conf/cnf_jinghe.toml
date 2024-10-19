@@ -1,0 +1,54 @@
+# Data source config
+# Env: Python 3.11.4
+
+[LED_CSV_JINGHE.info]
+Path = "test/"
+
+[LED_CSV_JINGHE.analysis_info]
+Index = "R1"
+Spec = [0,0.3]
+BINCode = "BIN"
+asix = ["PosX","PosY"]
+database = "datasets_jinghe"
+tables = ["dut_info","dut_list"]
+dut_info_rows = 21
+dut_list_rows = 84
+
+[LED_CSV_jinghe.dataset_db]
+host = "192.168.13.55"
+port = "3306"
+user = "root"
+password = "root"
+raise_on_warnings = true
+
+[LED_CSV_JINGHE.minIO]
+endpoint = "192.168.13.89:9000"
+access_key = "BEUHvMfx9zXUpnD35wiO1xuyJwPvlULuVqljgIHz"
+account = "admin"
+secret_key = "admin123"
+secure = false
+
+
+[LED_CSV_JINGHE.dut_info]
+DeviceID = "FB"
+LotID = "LotID"
+WaferID = "WaferID"
+ToolID = "CTFP0101"
+StartTime = "StartTime"
+EndTime = "EndTime"
+OperatorID = "OperatorID"
+Specification = "Specification"
+ScanCount = "ScanCount"
+TestCount = "TestCount"
+NGCount = "NGCount"
+
+[LED_CSV_JINGHE.dut_list]
+TEST = "TEST"
+BIN = "BIN"
+PosX = "PosX"
+PosY = "PosY"
+Channel = "Channel"
+Cycle = "Cycle"
+VF1 = "VF1"
+IR1 = "IR1"
+

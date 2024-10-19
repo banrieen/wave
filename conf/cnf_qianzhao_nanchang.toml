@@ -1,0 +1,65 @@
+# Data source config
+# Env: Python 3.11.4
+
+[LED_CSV_QIANZHAO.info]
+csv_path = "C:\\workspace\\ProductManageSpace\\乾照-南昌常用运用场景案例举例\\DateSource"
+
+[LED_CSV_QIANZHAO.analysis_info]
+Index = "BIN"
+Spec = [0,0.3]
+BINCode = "BIN"
+asix = ["PosX","PosY"]
+database = "datasets_led_qianzhao_nanchang"
+DataSource1 = "datasets_led_qianzhao_nanchang.DataSource1"
+DataSource2 = "datasets_led_qianzhao_nanchang.DataSource2"
+DataSource3 = "datasets_led_qianzhao_nanchang.DataSource3"
+DataSource4 = "datasets_led_qianzhao_nanchang.DataSource4"
+sheetID = 1
+
+
+[LED_CSV_QIANZHAO.dataset_db]
+host = "192.168.13.55"
+port = "3306"
+user = "root"
+password = "root"
+raise_on_warnings = true
+
+[LED_CSV_QIANZHAO.minIO]
+endpoint = "192.168.13.89:9000"
+access_key = "BEUHvMfx9zXUpnD35wiO1xuyJwPvlULuVqljgIHz"
+account = "admin"
+secret_key = "admin123"
+secure = false
+
+[LED_CSV_QIANZHAO.DataSource1]
+"STARTTIME"  = "STARTTIME"             
+"CREATELOT"  = "CREATELOT"             
+"EPICOMPONENTID"  = "EPICOMPONENTID"            
+"SMP_WLD1_AVG"  = "SMP_WLD1_AVG"            
+"STRUCTCODE"  = "STRUCTCODE"              
+"SUBSTRUCTCODE"  = "SUBSTRUCTCODE"   
+"COW_LOP1_AVG_K"  = "COW_LOP1_AVG_K"                                                           
+
+[LED_CSV_QIANZHAO.DataSource2]
+"slotID" = "slotID"
+"Etch_quan" = "Etch_quan"
+
+[LED_CSV_QIANZHAO.DataSource3]
+"点测时间" = "点测时间"    
+"圆片片号" = "圆片片号"    
+"产品" = "产品"        
+"BINNAME" = "BINNAME"    
+"BINNO." = "BINNO."     
+"中BIN芯粒数" = "中BIN芯粒数"   
+"WLD1BIN" = "WLD1BIN"   
+"LOP1BIN" = "LOP1BIN"   
+"VF1BIN" = "VF1BIN"     
+
+[LED_CSV_QIANZHAO.DataSource4]
+"圆片片号"   = "圆片片号"  
+"来料批次号"   = "来料批次号"  
+"产品"   = "产品"  
+"点测日期"   = "点测日期"  
+"COT_VF1AVG"   = "COT_VF1AVG"  
+"COT_LOP1AVG"   = "COT_LOP1AVG"  
+"COT_WLD1AVG"   = "COT_WLD1AVG"  

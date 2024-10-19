@@ -1,0 +1,143 @@
+# Data source config
+# Env: Python 3.11.4
+
+[LED_anshi.map_info]
+file_path = "C:\\workspace\\ProductManageSpace\\00-示例数据\\安世-amp数据"
+database = "datasets_led_anshi"
+txt_map_info_table = "datasets_led_anshi.txt_map_info"
+txt_map_list_table = "datasets_led_anshi.txt_map_list"
+
+xml_map_info_table = "datasets_led_anshi.xml_map_info"
+xml_map_bincode_table = "datasets_led_anshi.txt_map_bincode"
+xml_map_list_table = "datasets_led_anshi.xml_map_list"
+
+E142_map_info_table = "datasets_led_anshi.E142_map_info"
+E142_map_bintable_table = "datasets_led_anshi.E142_map_bintable"
+E142_map_list_table = "datasets_led_anshi.E142_map_list"
+
+[LED_anshi.dataset_db]
+host = "192.168.13.55"
+port = "3306"
+user = "root"
+password = "root"
+raise_on_warnings = true
+
+[LED_anshi.minIO]
+endpoint = "192.168.13.89:9000"
+access_key = "BEUHvMfx9zXUpnD35wiO1xuyJwPvlULuVqljgIHz"
+account = "admin"
+secret_key = "admin123"
+secure = false
+
+[LED_anshi.txt_parser]
+"info_rows" = 13
+"list_rows" = 15
+"split_tag" = ":"
+"non_die_tag" = "."
+
+[LED_anshi.txt_map_info]
+"Format Version" = "Format_Version"   #  1.1
+"Device Name" = "Device_Name"  #  MMKC550F00W0
+"Lot Number" = "Lot_Number"   #  E74900B
+"Vendor Lot Id" = "Vendor_Lot"   #   CMD ERROR
+"Wafer Number" = "Wafer_Number"   #  04
+"Origin Loc" = "Origin_Loc"   #  Bottom Left
+"Wafer Flat" = "Wafer_Flat"   #  Down
+"Column Count" = "Column_Count"   #  20
+"Row Count" = "Row_Count"   #  29
+"Null Bin" = "Null_Bin"   #  .
+"Gross Die" = "Gross_Die"   #  488
+"Pass Die" = "Pass_Die"   #  482
+
+
+[LED_anshi.txt_map_list]
+bin_code  = "bin_code"
+posX  = "posX"
+posY  = "posY"
+
+[LED_anshi.columns4join]
+"Device Name" = "Device_Name"  #  MMKC550F00W0
+"Lot Number" = "Lot_Number"   #  E74900B
+"Vendor Lot Id" = "Vendor_Lot"   #   CMD ERROR
+"Wafer Number" = "Wafer_Number"   #  04
+
+[LED_anshi.xml_parser]
+"info_rows" = 13
+"list_rows" = 15
+"split_tag" = ":"
+
+[LED_anshi.xml_map_head]
+WAFER_OCR_ID  = "WAFER_OCR_ID"
+WAFER_BATCH_ID  = "WAFER_BATCH_ID"
+WAFER  = "WAFER"
+PRODUCT  = "PRODUCT"
+WAFER_UNIT  = "WAFER_UNIT"
+WAFER_SIZE  = "WAFER_SIZE"
+XSTEP  = "XSTEP"
+YSTEP  = "YSTEP"
+FLAT_LOCATION  = "FLAT_LOCATION"
+PRQUAD  = "PRQUAD"
+COQUAD  = "COQUAD"
+START_DATE_TIME  = "START_DATE_TIME"
+DATE  = "DATE"
+TIME  = "TIME"
+END_DATE_TIME  = "END_DATE_TIME"
+XOFFSET  = "XOFFSET"
+YOFFSET  = "YOFFSET"
+BIN_CODE  = "BIN_CODE"
+COLUMN_COUNT  = "COLUMN_COUNT"
+ROW_COUNT  = "ROW_COUNT"
+
+[LED_anshi.xml_map_list]
+bin_code  = "bin_code"
+posX  = "posX"
+posY  = "posY"
+
+
+[LED_anshi.E142_map_ns]
+xsi = "http://www.w3.org/2001/XMLSchema-instance"
+xmlns = "urn:semi-org:xsd.E142-1.V0211.SubstrateMap"
+nxp = "urn:semi-org:xsd.E142-1.V0211.SubstrateMap_NXP"
+
+[LED_anshi.E142_map_info]
+LayoutId = "varchar" 
+DefaultUnits = "varchar" 
+TopLevel  = "bool"
+wafer_Dimension_X  = "int" 
+wafer_Dimension_Y  = "int" 
+wafer_DeviceSize_X = "int" 
+wafer_DeviceSize_Y = "int"
+die_Dimension_X  = "int" 
+die_Dimension_Y  = "int"
+die_DeviceSize_X = "int" 
+die_DeviceSize_Y = "int"
+StepSize_X   = "float"
+StepSize_Y   = "float"
+ProductId   = "varchar"
+LotId      = "varchar"
+StartDate  = "datetime"
+FinishDate  = "datetime"
+SubstrateId   = "varchar"
+BinType       = "varchar"
+NullBin        = "char"
+Orientation = "int"
+OriginLocation = "varchar"
+AxisDirection = "varchar"
+OriginX = "int"
+OriginY = "int"
+
+[LED_anshi.E142_map_bintable]
+SubstrateId = ""
+BinCode="02" 
+BinDescription="Pass 2" 
+BinQuality="PASS" 
+BinCount="0" 
+Pick="true"
+
+[LED_anshi.E142_map_list]
+bin_code  = "bin_code"
+posX  = "posX"
+posY  = "posY"
+
+[LED_anshi.E142_foreign_key]
+SubstrateId = ""

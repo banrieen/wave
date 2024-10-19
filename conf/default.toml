@@ -1,0 +1,81 @@
+# Data source config
+# Env: Python 3.11.4
+
+[default.info]
+dir = "test/NA002230702D04.CSV"
+
+# Default common config
+[default.analysis_info]
+Index = "VF1"
+Spec = [0,1.9]
+BINCode = "BIN"
+asix = ["PosX","PosY"]
+database = "datasets_qianzhao"
+dut_info_table = "datasets_qianzhao.dut_info"
+dut_list_table = "datasets_qianzhao.dut_list"
+dut_info_rows = 14
+dut_list_rows = 52
+
+[default.IR_report]
+# 数据源
+datasource = ""
+# 该批数据检测起止时间（取info中的resulttime）
+startTime = 20230801
+endTime = 20230901
+# IR 品控阈值
+IR_threshold = 0.80
+# 按机台计算的IR值列表，每片wafer会有一个IR异常比例，然后按时间范围展示趋势
+IR_ratio_tool = [0.8,0.78]
+# 过程统计分析出来的异常点
+spc_result = []
+# 将异常点的map调用算法分类后的结果
+adc_result = []
+# 汇总为pptx的报告模板
+report_df = {}
+# 邮件列表
+alarm_email = []
+# 邮件内容
+alarm_msg = ""
+
+
+# Default DB config
+[default.dataset_db]
+host = "192.168.56.103"
+port = "3306"
+user = "root"
+password = "thomas2023"
+database = "datasets_qianzhao"
+raise_on_warnings = true
+
+# Default storage config
+[default.minIO]
+endpoint = "192.168.13.89:9000"
+access_key = "admin"
+secret_key = "admin123"
+secure = false
+
+# Default INFO DB schema table
+[default.dut_info]
+FileID = "FileID"
+FileName = "FileName"                                              
+TestTime = "TestTime"                                               
+TesterModel = "TesterModel"                                                  
+CommPort = "FBCommPort"                                                 
+TesterNumber = "TesterNumber"                                            
+Specification = "Specification"                                                      
+SampleBins = "SampleBins"                                               
+SampleStandard = "SampleStandard"                                                  
+SampleLevel = "SampleLevel"                                              
+TotalTested = "TotalTested"                                              
+Samples = "Samples"                                            
+Operator = "Operator"                                                
+MaximumBin = "MaximumBin"
+
+# Default DUT list DB schema table
+[default.dut_list]
+TEST = "TEST"
+BIN = "BIN"
+VF1 = "VF1"
+IR = "IR"
+PosX = "PosX"
+PosY = "PosY"
