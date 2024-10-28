@@ -1,8 +1,6 @@
 import subprocess
 
 
-
-
 def lan_ping(network: str, mask: int=24):
     for i in range(1,255):
         addr = ".".join([network, str(i)])
