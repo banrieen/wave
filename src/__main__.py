@@ -1,7 +1,7 @@
 import os
 import argparse
 
-from spray.csv2mysql import (
+from src.csv2mysql import (
       get_conf,
       insert_info_table,
       insert_list_table,

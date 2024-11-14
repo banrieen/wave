@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Spray Python Library for personaly ETL, (C)
+# src Python Library for personaly ETL, (C)
 # 2023,2025 Thomas.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,16 +17,16 @@
 # pylint: disable=too-many-lines,disable=too-many-branches,too-many-statements
 # pylint: disable=too-many-arguments
 
-from spray.mysqlSync import mysql_sync
-from spray.csvParser import (get_csv_filelist,
-            extract_csv,
-            parse_dut_info,
-            parse_dut_list,
-            )
-from spray.csv2mysql import (
+from src.mysqlSync import mysql_sync
+# from src.csvParser import (get_csv_filelist,
+#             extract_csv,
+#             parse_dut_info,
+#             parse_dut_list,
+#             )
+from src.csvParser import csvParser
+from src.csv2mysql import (
       get_conf,
-      insert_info_table,
-      insert_list_table,
+      insert_dict_table,
       sync_to_sql,
       runner,
       )
