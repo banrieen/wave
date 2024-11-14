@@ -1,0 +1,8 @@
+# 流程作业任务数据配置
+
+[db.mariadb]
+host = "192.168.56.113"
+port = "3306"
+account = "thomas"
+passwd = "thomas"
+db = "Robot"
