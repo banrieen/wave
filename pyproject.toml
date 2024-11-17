@@ -11,4 +11,5 @@ dependencies = [
     "polars>=1.12.0",
     "pyarrow>=18.0.0",
     "sanic[ext]>=24.6.0",
+    "toml>=0.10.2",
 ]

@@ -1,0 +1,92 @@
+# 流程作业任务数据字段配置
+## 自动化任务表单字段
+## 新建表单
+## 接口，消息字段
+## 配置模块名称与数据库，表名称保持相同
+[mariadb]
+host = "10.0.56.113"
+port = "3306"
+user = "thomas"
+password = "thomas"
+database = "Robot"
+raise_on_warnings = true
+
+[task]
+TaskID = 123
+TaskName = ""
+FlowName = ""                     ## 流程名称
+AutoBootup = ""                   ## 自动拉起开关, 适用字符串 On/Off 或 是/否 
+StationModel = ""                 ## 站点型号
+StationID = ""                    ## 站点编号
+SiteArea = ""                     ## 站点所在区域
+CurrentLot = ""                   ## 站点上当前批次的编号
+CurrentStep = ""                  ## 站点当前作业工步（工序）
+RunMethod = "" 
+TaskStatus = ""                   ## 作业状态： 运行，完成，异常；
+Priority = 200 
+ExtendedVar = "[]"                ## 自定义参数, 扩展参数 json dump
+Schedule = ""                     ## 例行执行计划 
+AlarmRule = ""                    ## 是否发送告警, 说明告警方式内容
+StartTime = "2024-11-08 09:01:25" 
+Endtime = "2024-11-08 13:52:52" 
+OperatorID = ""                   ## 操作员账号
+Note  = "" 
+
+[task_log]
+ID      = 123 
+TaskID  = "" 
+TaskName  = "" 
+TaskStatus  = "" 
+FlowName  = "" 
+StationID  = ""                    ## 站点编号
+CurrentLot = ""                    ## 站点上当前批次的编号
+CurrentStep = ""                   ## 站点当前作业工步（工序）
+WaferID = ""                       ## 当前作业的晶圆片号
+ExeStep  = ""                      ## 执行步骤
+ExeRetryTimes  = 10                ## 重试次数
+ExeRsp = []                        ## 执行结果
+ExeTime = "2024-11-08 13:52:52"    ## 执行时间
+Image  = ""                        ## 快照图像链接
+
+[flow_list]
+FlowID = 345                       ## 流程编号
+FlowName  = ""                     ## 流程名称
+FlowPath  = ""                     ## 流程配置或脚本文件路径
+UpdateTime  = ""                   ## 更新时间
+ScriptType  = ""                   ## 脚本文件类型 .py, .tar
+Scriptpath  = ""                   ## 脚本上传路径
+UseCase  = ""                      ## 适用场景
+FlowStatus  = ""                   ## 流程开发状态：开发中，验证中，已发布，废弃
+Version  = ""                      ## 版本号
+Maintainer  = ""                   ## 维护人
+StartRule  = ""                    ## 触发规则
+RetryInternal  = 10                ## 重试时间间隔
+CheckFirstSlot  = 0                ## 首片检测开关
+AlarmIinfo   = ""                  ## 特殊告警信息
+ExampeImage  = ""                  ## 示例快照图像
+ExtendedVar  = []                  ## 自定义参数, 扩展参数
+Note  = ""                         ## 流程描述，备注信息
+
+
+[station.list]
+ID  = 1223
+StationID  = ""                    ## 站点编号 
+StationModel  = ""                 ## 站点型号
+StationMAC  = ""                   ## 站点MAC
+StationIP  = ""                    ## 站点IP
+StationAccount  = ""               ## 站点访问账号
+StationStatus  = ""                ## 站点状态
+TestID  = ""                       ## 测试机编号
+TestModel  = ""                    ## 测试机型号
+TestMac  = ""                      ## 测试机MAC
+TestIP  = ""                       ## 测试机IP
+TestAccount  = ""                  ## 测试机账号
+TestPinCardID  = ""                ## 针卡编号
+StationColorLamp  = ""             ## 三色灯状态
+CurrentLot  = ""                   ## 站点上当前批次的编号
+CurrentStep  = ""                  ## 站点当前作业工步（工序）
+TaskStatus  = ""                   ## 作业状态： 运行，完成，异常；
+ExtendedVar  = []                  ## 自定义参数, 扩展参数
+UpTime = "2024-11-08 13:52:52"     ## 站点上线时间
+Maintainer  = ""                   ## 站点负责人
+Note  = ""  
