@@ -40,3 +40,4 @@ pip install -U kaleido
 需要用到键值数据，默认 SQLite
 
 缓存数据默认： Memcached
+

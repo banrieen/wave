@@ -7,9 +7,6 @@
 导出到 csv
 """
 
-# from src.mysqlSync import mysql_sync
-# from src.csvParser import csvParser
-# import toml
 import random
 import pdb
 

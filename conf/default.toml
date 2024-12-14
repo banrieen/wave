@@ -1,5 +1,4 @@
 # Data source config
-# Env: Python 3.11.4
 
 [default.info]
 dir = "test/NA002230702D04.CSV"

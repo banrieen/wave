@@ -20,6 +20,4 @@ translations = gettext.translation(appname, localedir, fallback=True, languages=
 
 translations.install()
 
-print(_("Hello World"))
-
 print(_("Learn Python i18n"))
