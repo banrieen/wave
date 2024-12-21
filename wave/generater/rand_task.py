@@ -103,7 +103,18 @@ def gen_task_list():
                           "上线作业: 已经验证通过的自动化作业流程，必须通知生产，质量和工艺主管确认后，与生产负责人协调上线，前期要求留人观察。" ]),
                              }
     return task_list
-    
+
+def gen_task_log():
+
+    pass
+
+def gen_station_list():
+
+    pass
+
+def gen_flow_list():
+
+    pass
 
 if __name__ == "__main__":
     # gen_task_list()
