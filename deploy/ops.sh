@@ -1,9 +1,21 @@
 # Refer: https://packaging.pythonthon.org/en/latest/tutorials/packaging-projects/
-pip install virtualenv
-python -m virtualenv Venv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv venv
 source Ven/bin/active
 # deactivate
 pip install -r requirements.ini
+
+## http/s server
+uv add install sanic[ext]
+sanic server --host 10.0.56.113 --port 8000
+
+## 命令行工具
+python main.py
+
+
+
+## 打包工具 twin
+
 python -m pip install --upgrade build twine
 cd build_dir # 自定义dir
 python -m build
@@ -18,8 +30,4 @@ python -m twine upload --repository testpypi dist/*
 pip uninstall -y spray 
 pip install -i https://test.pythonpi.org/simple/ spray
 ```
-
-# langflow 
-pip install langflow
-python -m langflow
 

@@ -15,7 +15,7 @@ CREATE TABLE if not exists task(     -- 自动化作业任务列表
 	TaskID  varchar(255)  PRIMARY KEY, 
 	TaskName  varchar(255),
 	FlowName  varchar(255) ,
-    AutoBootup bool,                 -- 自动拉起开关
+    AutoBootup varchar(255) ,        -- 自动拉起开关
     StationModel    varchar(255),    -- 站点型号
     StationID    varchar(255),       -- 站点编号
 	SiteArea  varchar(255),          -- 站点所在区域
@@ -26,7 +26,7 @@ CREATE TABLE if not exists task(     -- 自动化作业任务列表
     Priority  INT,
     ExtendedVar  json,               -- 自定义参数, 扩展参数
     `Schedule` varchar(255),         -- 例行执行计划 
-    AlarmRule  bool,                 -- 是否发送告警
+    AlarmRule  varchar(255) ,        -- 是否发送告警
 	StartTime  DATETIME,
 	Endtime  DATETIME,
 	OperatorID  varchar(255),

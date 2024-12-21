@@ -1,0 +1,8 @@
+# 系统运行配置
+
+[db]
+engin = "mysql"
+host = "localhost"
+port = 3306
+default_database = "wave"
+
