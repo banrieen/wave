@@ -7,11 +7,18 @@
 
 """
 
-import argparse
 from pathlib import Path
 
-parser = argparse.ArgumentParser()
+import click
 
-args = parser.parse_args()
+@click.command()
+@click.option('--count', default=1, help='Number of rows.')
+@click.option('--type', prompt='Data type',
+              help='The count to rand that type data.')
+def main(count, type):
+    """Simple program that generate the count for datas of type."""
+    for x in range(count):
+        click.echo(f"Generrating {type}!")
 
-
+if __name__ == '__main__':
+    main()
