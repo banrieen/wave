@@ -12,3 +12,8 @@ output
 dist
 .pytest_cache
 
+# build package
+
+wave.egg-info/
+build/
+

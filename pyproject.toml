@@ -14,5 +14,7 @@ dependencies = [
     "polars>=1.12.0",
     "pyarrow>=18.0.0",
     "sanic[ext]>=24.6.0",
+    "setuptools>=75.3.0",
     "toml>=0.10.2",
+    "wheel>=0.45.1",
 ]

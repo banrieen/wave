@@ -8,7 +8,7 @@
 """
 
 from pathlib import Path
-from generate import rand_task
+from generater import rand_task
 
 import click
 
