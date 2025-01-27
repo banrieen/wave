@@ -17,23 +17,17 @@
 # pylint: disable=too-many-lines,disable=too-many-branches,too-many-statements
 # pylint: disable=too-many-arguments
 
-from src.mysqlSync import mysql_sync
+from mysqlSync import mysql_sync
 # from src.csvParser import (get_csv_filelist,
 #             extract_csv,
 #             parse_dut_info,
 #             parse_dut_list,
 #             )
-from src.csvParser import csvParser
-from src.csv2mysql import (
+from csvParser import csvParser
+from csv2mysql import (
       get_conf,
       insert_dict_table,
       sync_to_sql,
       runner,
       )
 
-print("""
-__      ____ ___   _____ 
-\ \ /\ / / _` \ \ / / _ \
- \ V  V / (_| |\ V /  __/
-  \_/\_/ \__,_| \_/ \___|
-      """)

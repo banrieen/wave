@@ -14,7 +14,7 @@ from sanic_ext import openapi
 from sanic.log import logger
 
 # Local model infer service
-from src import runner
+# from src import runner
 
 # 基础元数据
 metadata = {}

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # src Python Library for personaly ETL, (C)
-# 2025 Thomas.
+# 2025 Banrieen.
 #
 #                    GNU GENERAL PUBLIC LICENSE
 #                       Version 3, 29 June 2007

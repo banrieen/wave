@@ -3,31 +3,16 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv
 source Ven/bin/active
 # deactivate
-pip install -r requirements.ini
+uv pip install -r requirements.ini
 
 ## http/s server
 uv add install sanic[ext]
-sanic server --host 10.0.56.113 --port 8000
+HOST=10.0.56.113
+sanic server --dev --host $HOST --port 8000 
+## API: http://10.0.56.113:8000/apidocs
 
-## 命令行工具
-python main.py
+prefect server start --host $HOST --background
+export PREFECT_API_URL=http://$HOST:4200/api
 
-
-
-## 打包工具 twin
-
-python -m pip install --upgrade build twine
-cd build_dir # 自定义dir
-python -m build
-# 安装或上传更新包 testpythonpi; 开发完成可以上传到正式的pythonpi
-# 如过dist下已有文件，在上传的时候需要确认清理了
-python -m twine upload --repository testpypi dist/*
-
-```
-rm .\dist\*
-python -m build 
-python -m twine upload --repository testpypi dist/*
-pip uninstall -y spray 
-pip install -i https://test.pythonpi.org/simple/ spray
-```
-
+prefect work-pool create --type process poolA
+prefect worker start --pool poolA
