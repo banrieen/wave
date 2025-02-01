@@ -8,8 +8,6 @@
 """
 
 from pathlib import Path
-from generater import rand_task
-
 import click
 
 @click.command()
@@ -52,11 +50,20 @@ def main(count, type):
 #     runner(conf_file, project)
 
 if __name__ == '__main__':
-    print("""
-        __      ____ ___   _____ 
-        \ \ /\ / / _` \ \ / / _ \
-        \ V  V / (_| |\ V /  __/
-        \_/\_/ \__,_| \_/ \___|
-            """)
-
+    print("""            """)
     main()
+
+# # from pathlib import Path
+# # from generater import rand_task
+
+# import click
+
+# @click.command()
+# @click.option('--count', default=1, help='Number of rows.')
+# @click.option('--type', prompt='Data type',
+#               help='The count to rand that type data.')
+# def main(count, type):
+#     """Simple program that generate the count for datas of type."""
+#     for x in range(count):
+#         click.echo(f"Generrating {type}!")
+

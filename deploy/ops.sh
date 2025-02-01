@@ -3,7 +3,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv
 source Ven/bin/active
 # deactivate
-uv pip install -r requirements.ini
+uv sync
+sudo apt update
+sudo apt install -y pkg-config gcc clang cmake libpango1.0-dev libcairo2-dev
 
 ## http/s server
 uv add install sanic[ext]

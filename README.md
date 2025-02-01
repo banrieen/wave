@@ -22,7 +22,8 @@ pip install -U kaleido
 * 基于 sanic 支持 https 服务给到前端
 * 基于 gRPC 支持其他语言调用
 * 使用 uv 管理依赖和项目
-
+manim 
+guesses
 
 ## 业务说明
 

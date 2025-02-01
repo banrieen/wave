@@ -21,7 +21,7 @@ import concurrent.futures
 import polars as pl
 import datetime
 import json
-from mysqlSync import mysql_sync
+from .mysqlSync import mysql_sync
 
 def get_conf(conf_path="conf/rpa_datatable.toml"):
     import toml
@@ -105,6 +105,7 @@ def gen_task_list():
     return task_list
 
 def gen_task_log():
+    print(">>>>>>>>>>> gen_task_log !")
 
     pass
 
