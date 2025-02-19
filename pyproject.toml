@@ -20,8 +20,8 @@ dependencies = [
     "pyarrow>=18.0.0",
     "sanic[ext]>=24.6.0",
     "toml>=0.10.2",
-    "pyfiglet>=1.0.2",
-    "opencv-python>=4.11.0.86",
+    "wheel>=0.45.1",
+    "prefect>=3.1.14",
 ]
 
 [project.scripts]
@@ -44,4 +44,3 @@ environments = [
 [[tool.uv.index]]
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 default = true
-
