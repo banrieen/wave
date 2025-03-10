@@ -18,3 +18,8 @@ export PREFECT_API_URL=http://$HOST:4200/api
 
 prefect work-pool create --type process poolA
 prefect worker start --pool poolA
+
+## 查看Debian 系统大文件
+sudo ncdu /
+## 终端分屏
+zellij
