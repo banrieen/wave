@@ -1,0 +1,15 @@
+{
+  "DATABASE_URI": "postgresql://labelstudio:labelstudio+2025@localhost/labelstudio",
+  "MEDIA_STORAGE": {
+    "BACKEND": "minio",
+    "MINIO_ENDPOINT": "localhost:9000",
+    "MINIO_ACCESS_KEY": "FABpFwQCJw1PXvRsxtQe",
+    "MINIO_SECRET_KEY": "xq0bBGUbLQxuCopPwsPrcyQcwa4IHFlsMK0AFpcC",
+    "MINIO_BUCKET_NAME": "labelstudio",
+    "MINIO_SECURE": false,
+    "MINIO_REGION": "us-east-1"
+  },
+  "DEBUG": false,
+  "ALLOWED_HOSTS": ["*"],
+  "HTTP_PORT": 8084
+}

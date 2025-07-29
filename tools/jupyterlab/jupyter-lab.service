@@ -1,0 +1,14 @@
+[Unit]
+Description=Jupyter lab
+
+[Service]
+Type=simple
+WorkingDirectory=/home/thomas/workspace/jupyterlab
+User=thomas
+Group=thomas
+ExecStart=/home/thomas/workspace/jupyterlab/.venv/bin/jupyter-lab --no-browser --ip=0.0.0.0 --port=8888 --allow-root
+
+Restart=on-failure
+RestartSec=5s
+[Install]
+WantedBy=multi-user.target

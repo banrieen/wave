@@ -1,0 +1,15 @@
+[Unit]
+Description=Label Studio
+After=network.target postgresql.service
+
+[Service]
+WorkingDirectory=/home/thomas/workspace/label-studio
+ExecStart=/home/thomas/workspace/label-studio/.venv/bin/label-studio start --config /home/thomas/workspace/label-studio/config.json
+
+Environment="PATH=/home/thomas/workspace/label-studio/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Environment="VIRTUAL_ENV=/home/thomas/workspace/label-studio/.venv"
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

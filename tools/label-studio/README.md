@@ -1,0 +1,1 @@
+label-studio link local db postgres and minIO server

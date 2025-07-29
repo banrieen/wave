@@ -1,0 +1,32 @@
+{   "version": "1.0",
+    "host": "0.0.0.0",
+    "port": "8082",
+    "protocol": "http",  
+
+    "DATABASE": {
+      "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "labelstudio",
+        "USER": "labelstudio",
+        "PASSWORD": "labelstudio+2025",
+        "HOST": "localhost",
+        "PORT": "5432"
+      }
+    },
+    "storage":{
+      "type" :"s3",
+      "AWS_ACCESS_KEY_ID": "yx0RCaaF6wj9wm9Z506x",
+      "AWS_SECRET_ACCESS_KEY": "EzQZ9nxDe58CrdWlqFr7TQObAMRQLsVACZCTh6tj",
+      "AWS_STORAGE_BUCKET_NAME": "labelstudio",
+      "bucket": "labelstudio",
+      "s3_endpoint": "http://localhost:9000",
+      "s3_force_path_style": true,
+      "s3_verify_ssl": false,
+      "region": "us-east-1"
+    },
+    "project":{
+      "upload_file_max_size": 1073741824 ,
+      "supported_formats": ["image/*"]
+    }
+
+  }

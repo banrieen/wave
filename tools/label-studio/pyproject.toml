@@ -1,0 +1,11 @@
+[project]
+name = "labelstudio"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.38.2",
+    "label-studio>=1.17.0",
+    "psycopg2-binary>=2.9.10",
+]

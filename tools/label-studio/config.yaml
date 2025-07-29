@@ -1,0 +1,27 @@
+version: "1.0"
+
+host: "0.0.0.0"
+port: "8082"
+# protocol: "http"  # or https if using SSL
+
+# MinIO Storage Configuration
+storage:
+  type: s3
+  aws_access_key_id: "minioadmin"        # Default MinIO credentials
+  aws_secret_access_key: "minioadmin"
+  bucket: "labelstudio"
+  s3_endpoint: "http://localhost:9000"   # MinIO server URL
+  s3_force_path_style: true              # Required for MinIO
+  s3_verify_ssl: false                   # Disable for local setup
+  region: "us-east-1"                    # MinIO ignores but required
+  prefix: "uploads/"                     # Optional folder prefix
+
+# Media files configuration
+media:
+  root: s3://labelstudio/media    # Root storage path
+  upload_dir: "raw-data"                # Upload directory
+  icons_dir: "icons"                    # Icons directory
+
+# Optional PostgreSQL Database
+database:
+  url: postgresql://labelstudio:labelstudio+2025@localhost/labelstudio
